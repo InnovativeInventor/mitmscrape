@@ -73,7 +73,7 @@ class Scraper:
                 remaining_links.add(each_link.get_attribute("href"))
 
             for each_link in remaining_links:
-                if each link and each_link.startswith(self.path):
+                if each_link and each_link.startswith(self.path):
                     self.get(each_link)
                     self.scrape(recursion=recursion, depth=depth + 1)
 

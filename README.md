@@ -20,3 +20,9 @@ Filtering results (needs `ripgrep`)
 ```bash
 mitmdump -nC results | rg "\.json"
 ```
+
+## Example usage
+```
+python3 scrape.py https://results.enr.clarityelections.com/GA/105369 2
+mitmdump -nC results | rg "\.json"
+```

@@ -13,7 +13,7 @@ poetry shell
 
 Running
 ```bash
-python3 scrape.py [url] [recursion_depth]
+python3 mitmscrape.py [url] [recursion_depth]
 ```
 
 Filtering results (needs `ripgrep`)
@@ -23,6 +23,6 @@ mitmdump -nC results | rg "\.json"
 
 ## Example usage
 ```
-python3 scrape.py https://results.enr.clarityelections.com/GA/105369 2
+python3 mitmscrape.py https://results.enr.clarityelections.com/GA/105369 2
 mitmdump -nC results | rg "\.json"
 ```

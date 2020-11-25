@@ -19,11 +19,14 @@ class Scraper:
         url: str = "https://example.com",
         headless: bool = False,
         recursion: int = 1,
+        path: str = ""
     ):
         self.proxy = self.start_proxy()
         self.url = url
-        self.path = "/".join(self.url.split("/")[:-1])
         self.visited_urls = []
+
+        if not path:
+            self.path = "/".join(self.url.split("/")[:-1])
 
         try:
             chrome_options = Options()
@@ -66,7 +69,6 @@ class Scraper:
             self.visited_urls.append(url)
 
     def scrape(self, recursion=1, depth=0):
-        # print(recursion, depth) # debugging
         if depth < recursion:
             remaining_links = set()
             links = self.driver.find_elements_by_tag_name("a")

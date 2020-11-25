@@ -49,7 +49,11 @@ class Scraper:
             self.end_proxy()
 
     def start_proxy(self):
-        return subprocess.Popen(["mitmdump", "-w", "results"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        return subprocess.Popen(
+            ["mitmdump", "-w", "results"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
 
     def end_proxy(self):
         self.proxy.terminate()
@@ -62,7 +66,7 @@ class Scraper:
             self.visited_urls.append(url)
 
     def scrape(self, recursion=1, depth=0):
-        print(recursion, depth)
+        # print(recursion, depth) # debugging
         if depth < recursion:
             remaining_links = set()
             links = self.driver.find_elements_by_tag_name("a")

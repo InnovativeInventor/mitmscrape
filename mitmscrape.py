@@ -17,7 +17,7 @@ class Scraper:
         self,
         executable_path: str = "./chromedriver",
         url: str = "https://example.com",
-        headless: bool = False,
+        headless: bool = True,
         recursion: int = 1,
         path: str = ""
     ):

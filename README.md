@@ -16,13 +16,13 @@ Running
 python3 mitmscrape.py [url] [recursion_depth]
 ```
 
-Filtering results (needs `ripgrep`)
+Filtering urls (needs `ripgrep`)
 ```bash
-mitmdump -nC results | rg "\.json"
+cat urls.list | rg "\.json"
 ```
 
 ## Example usage
 ```
 python3 mitmscrape.py https://results.enr.clarityelections.com/GA/105369 2
-mitmdump -nC results | rg "\.json"
+cat urls.list | rg "\.json"
 ```

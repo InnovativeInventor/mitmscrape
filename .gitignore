@@ -1,4 +1,6 @@
 chromedriver
+urls.list
+json.list
 results
 chromedriver*
 # Byte-compiled / optimized / DLL files
